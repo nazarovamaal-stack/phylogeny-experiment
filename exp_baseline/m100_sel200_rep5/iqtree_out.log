@@ -1,0 +1,136 @@
+IQ-TREE version 3.1.1 for MacOS ARM 64-bit built Apr  8 2026
+Developed by Bui Quang Minh, Thomas Wong, Nhan Ly-Trong, Huaiyan Ren
+Contributed by Lam-Tung Nguyen, Dominik Schrempf, Chris Bielow,
+Olga Chernomor, Michael Woodhams, Diep Thi Hoang, Heiko Schmidt
+
+Host:    Noutbuk-maria.local (SSE4.2, 16 GB RAM)
+Command: iqtree -s exp_baseline/m100_sel200_rep5/combined.fasta -m JC -nt AUTO -pre exp_baseline/m100_sel200_rep5/iqtree_out -seed 210542 -redo
+Seed:    210542 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Tue May 12 15:08:37 2026
+Kernel:  SSE2 - auto-detect threads (8 CPU cores detected)
+
+Reading alignment file exp_baseline/m100_sel200_rep5/combined.fasta ... Fasta format detected
+Reading fasta file: done in 0.000515938 secs using 91.29% CPU
+Alignment most likely contains DNA/RNA sequences
+Constructing alignment: done in 0.00100994 secs using 56.74% CPU
+Alignment has 30 sequences with 2200 columns, 2012 distinct patterns
+2200 parsimony-informative, 0 singleton sites, 0 constant sites
+          Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 4.3869e-05 secs using 278.1% CPU
+   1  taxon_1     0.00%    passed     51.91%
+   2  taxon_2     0.00%    failed      2.93%
+   3  taxon_3     0.00%    passed     74.05%
+   4  taxon_4     0.00%    passed     78.35%
+   5  taxon_5     0.00%    passed     75.02%
+   6  taxon_6     0.00%    passed     30.58%
+   7  taxon_7     0.00%    passed     37.00%
+   8  taxon_8     0.00%    passed      7.79%
+   9  taxon_9     0.00%    passed     44.09%
+  10  taxon_10    0.00%    passed     42.10%
+  11  taxon_11    0.00%    passed     47.27%
+  12  taxon_12    0.00%    passed     76.82%
+  13  taxon_13    0.00%    passed     43.20%
+  14  taxon_14    0.00%    passed     80.88%
+  15  taxon_15    0.00%    passed     62.36%
+  16  taxon_16    0.00%    passed     77.55%
+  17  taxon_17    0.00%    passed     31.00%
+  18  taxon_18    0.00%    failed      3.07%
+  19  taxon_19    0.00%    passed     33.87%
+  20  taxon_20    0.00%    passed     26.37%
+  21  taxon_21    0.00%    failed      4.65%
+  22  taxon_22    0.00%    passed     98.62%
+  23  taxon_23    0.00%    passed     38.82%
+  24  taxon_24    0.00%    passed     41.66%
+  25  taxon_25    0.00%    passed     68.65%
+  26  taxon_26    0.00%    passed      8.46%
+  27  taxon_27    0.00%    passed     43.84%
+  28  taxon_28    0.00%    passed     28.39%
+  29  taxon_29    0.00%    passed     14.32%
+  30  taxon_30    0.00%    passed     52.45%
+****  TOTAL       0.00%  3 sequences failed composition chi2 test (p-value<5%; df=3)
+Checking for duplicate sequences: done in 0.000133991 secs using 89.56% CPU
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.002 seconds
+
+NOTE: 1 MB RAM (0 GB) is required!
+Measuring multi-threading efficiency up to 8 CPU cores
+Increase to 10 rounds for branch lengths
+390 trees examined
+Threads: 1 / Time: 8.017 sec / Speedup: 1.000 / Efficiency: 100% / LogL: -86785
+Threads: 2 / Time: 8.701 sec / Speedup: 0.921 / Efficiency: 46% / LogL: -86785
+Determining AUTO threadcount: done in 16.7176 secs using 107.8% CPU
+BEST NUMBER OF THREADS: 1
+
+Estimate model parameters (epsilon = 0.100)
+1. Initial log-likelihood: -81177.895
+Optimal log-likelihood: -80698.418
+Rate parameters:  A-C: 1.00000  A-G: 1.00000  A-T: 1.00000  C-G: 1.00000  C-T: 1.00000  G-T: 1.00000
+Base frequencies:  A: 0.250  C: 0.250  G: 0.250  T: 0.250
+Parameters optimization took 1 rounds (0.011 sec)
+Wrote distance file to... 
+Computing ML distances based on estimated model parameters...
+Calculating distance matrix: done in 0.00121593 secs using 99.27% CPU
+Computing ML distances took 0.001351 sec (of wall-clock time) 0.001335 sec (of CPU time)
+WARNING: Some pairwise ML distances are too long (saturated)
+Setting up auxiliary I and S matrices: done in 2.40803e-05 secs using 70.6% CPU
+Constructing RapidNJ tree: done in 4.69685e-05 secs using 168.2% CPU
+Computing RapidNJ tree took 0.000099 sec (of wall-clock time) 0.000110 sec (of CPU time)
+Log-likelihood of RapidNJ tree: -81828.853
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 0.312 second
+Computing log-likelihood of 98 initial trees ... 0.245 seconds
+Current best score: -80698.418
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 1: -80698.405
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 2: -80693.989
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 3: -80690.053
+Iteration 10 / LogL: -80690.781 / Time: 0h:0m:17s
+Iteration 20 / LogL: -80690.053 / Time: 0h:0m:18s
+Finish initializing candidate tree set (8)
+Current best tree score: -80690.053 / CPU time: 1.857
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Iteration 30 / LogL: -80690.053 / Time: 0h:0m:19s (0h:0m:48s left)
+Iteration 40 / LogL: -80690.053 / Time: 0h:0m:20s (0h:0m:32s left)
+Iteration 50 / LogL: -80690.781 / Time: 0h:0m:20s (0h:0m:22s left)
+Iteration 60 / LogL: -80690.053 / Time: 0h:0m:21s (0h:0m:15s left)
+Iteration 70 / LogL: -80690.053 / Time: 0h:0m:22s (0h:0m:10s left)
+Iteration 80 / LogL: -80690.053 / Time: 0h:0m:22s (0h:0m:6s left)
+Iteration 90 / LogL: -80690.053 / Time: 0h:0m:23s (0h:0m:3s left)
+Iteration 100 / LogL: -80690.053 / Time: 0h:0m:24s (0h:0m:0s left)
+TREE SEARCH COMPLETED AFTER 104 ITERATIONS / Time: 0h:0m:24s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -80690.053
+Optimal log-likelihood: -80690.053
+Rate parameters:  A-C: 1.00000  A-G: 1.00000  A-T: 1.00000  C-G: 1.00000  C-T: 1.00000  G-T: 1.00000
+Base frequencies:  A: 0.250  C: 0.250  G: 0.250  T: 0.250
+Parameters optimization took 1 rounds (0.003 sec)
+BEST SCORE FOUND : -80690.053
+Total tree length: 19.120
+
+Total number of iterations: 104
+CPU time used for tree search: 7.780 sec (0h:0m:7s)
+Wall-clock time used for tree search: 7.810 sec (0h:0m:7s)
+Total CPU time used: 25.849 sec (0h:0m:25s)
+Total wall-clock time used: 24.572 sec (0h:0m:24s)
+
+Analysis results written to: 
+  IQ-TREE report:                exp_baseline/m100_sel200_rep5/iqtree_out.iqtree
+  Maximum-likelihood tree:       exp_baseline/m100_sel200_rep5/iqtree_out.treefile
+  Likelihood distances:          exp_baseline/m100_sel200_rep5/iqtree_out.mldist
+  Screen log file:               exp_baseline/m100_sel200_rep5/iqtree_out.log
+
+Date and Time: Tue May 12 15:09:02 2026

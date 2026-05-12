@@ -1,0 +1,154 @@
+IQ-TREE 3.1.1 built Apr  8 2026
+
+Input file name: exp_baseline/m2_sel200_rep1/combined.fasta
+Type of analysis: tree reconstruction
+Random seed number: 200342
+
+REFERENCES
+----------
+
+To cite IQ-TREE 3 please use:
+
+Thomas K.F. Wong, Nhan Ly-Trong, Huaiyan Ren, Hector Banos, Andrew J. Roger,
+Edward Susko, Chris Bielow, Nicola De Maio, Nick Goldman, Matthew W. Hahn,
+Gavin Huttley, Robert Lanfear, Bui Quang Minh (2025)
+IQ-TREE 3: Phylogenomic Inference Software using Complex Evolutionary Models.
+Submitted.
+
+SEQUENCE ALIGNMENT
+------------------
+
+NOTE: Alignment sequence type is auto-detected. If in doubt, specify it via -st option.
+Input data: 30 sequences with 2200 nucleotide sites
+Number of constant sites: 65 (= 2.95455% of all sites)
+Number of invariant (constant or ambiguous constant) sites: 65 (= 2.95455% of all sites)
+Number of parsimony informative sites: 2135
+Number of distinct site patterns: 2016
+
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: JC
+
+Rate parameter R:
+
+  A-C: 1.0000
+  A-G: 1.0000
+  A-T: 1.0000
+  C-G: 1.0000
+  C-T: 1.0000
+  G-T: 1.0000
+
+State frequencies: (equal frequencies)
+
+Rate matrix Q:
+
+  A        -1    0.3333    0.3333    0.3333
+  C    0.3333        -1    0.3333    0.3333
+  G    0.3333    0.3333        -1    0.3333
+  T    0.3333    0.3333    0.3333        -1
+
+Model of rate heterogeneity: Uniform
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -79542.9375 (s.e. 226.0850)
+Unconstrained log-likelihood (without tree): -16418.4398
+Number of free parameters (#branches + #model parameters): 57
+Akaike information criterion (AIC) score: 159199.8750
+Corrected Akaike information criterion (AICc) score: 159202.9618
+Bayesian information criterion (BIC) score: 159524.5591
+
+Total tree length (sum of branch lengths): 19.3110
+Sum of internal branch lengths: 8.4785 (43.9050% of tree length)
+
+NOTE: Tree is UNROOTED although outgroup taxon 'taxon_1' is drawn at root
+
++---------taxon_1
+|
+|                                              +-------------taxon_2
+|                                           +--|
+|                                           |  +---------taxon_5
+|                                       +---|
+|                                       |   |         +--taxon_3
+|                                       |   +---------|
+|                                       |             +--taxon_4
+|                             +---------|
+|                             |         |              +--taxon_27
+|                             |         |           +--|
+|                             |         |           |  +--taxon_29
+|                             |         |  +--------|
+|                             |         |  |        +----taxon_28
+|                             |         +--|
+|                             |            +----------taxon_30
+|                          +--|
+|                          |  +-----taxon_17
+|                +---------|
+|                |         +--taxon_18
+|             +--|
+|             |  +--taxon_19
+|          +--|
+|          |  |  +---------taxon_20
+|          |  +--|
+|          |     |       +------taxon_21
+|          |     +-------|
+|          |             +--taxon_22
+|       +--|
+|       |  |        +------------taxon_25
+|       |  +--------|
+|       |           +----taxon_26
+|  +----|
+|  |    |            +---taxon_23
+|  |    +------------|
+|  |                 +**taxon_24
++--|
+|  |  +-----------taxon_12
+|  +--|
+|     |        +-----taxon_13
+|     |  +-----|
+|     |  |     |   +--------taxon_14
+|     |  |     +---|
+|     |  |         +--taxon_15
+|     +--|
+|        +---taxon_16
+|
+|               +--taxon_6
+|        +------|
+|        |      +--taxon_7
+|     +--|
+|     |  |  +------taxon_8
+|     |  +--|
+|     |     +--------taxon_9
++-----|
+      |  +-------taxon_10
+      +--|
+         +--taxon_11
+
+Tree in newick format:
+
+(taxon_1:0.6224988607,((((((((((taxon_2:0.8462577700,taxon_5:0.5978810302):0.1149441196,(taxon_3:0.1719330768,taxon_4:0.1257169687):0.6460177132):0.2420860303,(((taxon_27:0.1975063450,taxon_29:0.1034911629):0.1073315104,taxon_28:0.3483444379):0.5838936843,taxon_30:0.6516710391):0.1310992957):0.6365056164,taxon_17:0.3920847123):0.0682135236,taxon_18:0.1887417885):0.5960576633,taxon_19:0.1066037906):0.1855868120,(taxon_20:0.5959535872,(taxon_21:0.4610039750,taxon_22:0.1176046035):0.4739546091):0.1270008140):0.2158081745,(taxon_25:0.7749411795,taxon_26:0.3146681454):0.5660197553):0.1188546630,(taxon_23:0.2707579086,taxon_24:0.0000020312):0.8036389637):0.3400620089,(taxon_12:0.7344939629,((taxon_13:0.3622117005,(taxon_14:0.5475494935,taxon_15:0.2115078364):0.2751932310):0.3700973204,taxon_16:0.2622577266):0.1979521044):0.1868583093):0.1783551106,(((taxon_6:0.0934267449,taxon_7:0.0957545599):0.4614143509,(taxon_8:0.4299310477,taxon_9:0.5649650246):0.0908892931):0.2194002562,(taxon_10:0.4858741480,taxon_11:0.1568755339):0.1448152100):0.3964472362);
+
+ALISIM COMMAND
+--------------
+To simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis, you can use the following command:
+
+--alisim simulated_MSA -t exp_baseline/m2_sel200_rep1/iqtree_out.treefile -m "JC" --length 2200
+
+To mimic the alignment used to produce this analysis, i.e. simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis *and* copying the same gap positions as the original alignment, you can use the following command:
+
+iqtree -s exp_baseline/m2_sel200_rep1/combined.fasta --alisim mimicked_MSA
+
+To simulate any number of alignments in either of the two commandlines above, use the --num-alignments options, for example mimic 100 alignments you would use the command line:
+
+iqtree -s exp_baseline/m2_sel200_rep1/combined.fasta --alisim mimicked_MSA --num-alignments 100
+
+For more information on using AliSim, please visit: www.iqtree.org/doc/AliSim
+
+TIME STAMP
+----------
+
+Date and time: Tue May 12 14:06:42 2026
+Total CPU time used: 24.1012 seconds (0h:0m:24s)
+Total wall-clock time used: 22.685 seconds (0h:0m:22s)
+

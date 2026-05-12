@@ -1,0 +1,56 @@
+IQ-TREE version 3.1.1 for MacOS ARM 64-bit built Apr  8 2026
+Developed by Bui Quang Minh, Thomas Wong, Nhan Ly-Trong, Huaiyan Ren
+Contributed by Lam-Tung Nguyen, Dominik Schrempf, Chris Bielow,
+Olga Chernomor, Michael Woodhams, Diep Thi Hoang, Heiko Schmidt
+
+Host:    Noutbuk-maria.local (SSE4.2, 16 GB RAM)
+Command: iqtree -s exp_baseline/m1.1_sel1_rep1/combined.fasta -m JC -nt AUTO -pre test_manual -seed 123
+Seed:    123 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Mon May 11 17:13:08 2026
+Kernel:  SSE2 - auto-detect threads (8 CPU cores detected)
+
+Reading alignment file exp_baseline/m1.1_sel1_rep1/combined.fasta ... Fasta format detected
+Reading fasta file: done in 0.000589132 secs using 90.13% CPU
+Alignment most likely contains 30-state morphological data
+Constructing alignment: done in 0.00108695 secs using 56.49% CPU
+Alignment has 30 sequences with 1001 columns, 1001 distinct patterns
+1001 parsimony-informative, 0 singleton sites, 0 constant sites
+          Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 7.10487e-05 secs using 177.3% CPU
+   1  taxon_1     0.00%    passed     98.24%
+   2  taxon_2     0.00%    passed     47.43%
+   3  taxon_3     0.00%    passed     98.58%
+   4  taxon_4     0.00%    passed     90.71%
+   5  taxon_5     0.00%    passed     87.70%
+   6  taxon_6     0.00%    passed      7.26%
+   7  taxon_7     0.00%    passed     11.53%
+   8  taxon_8     0.00%    passed     23.24%
+   9  taxon_9     0.00%    passed     46.45%
+  10  taxon_10    0.00%    passed     93.67%
+  11  taxon_11    0.00%    passed     58.92%
+  12  taxon_12    0.00%    passed     43.99%
+  13  taxon_13    0.00%    passed     77.33%
+  14  taxon_14    0.00%    passed     82.38%
+  15  taxon_15    0.00%    passed     41.49%
+  16  taxon_16    0.00%    passed     42.96%
+  17  taxon_17    0.00%    passed     65.57%
+  18  taxon_18    0.00%    passed     45.23%
+  19  taxon_19    0.00%    passed     85.54%
+  20  taxon_20    0.00%    passed     27.10%
+  21  taxon_21    0.00%    passed     82.51%
+  22  taxon_22    0.00%    passed     41.04%
+  23  taxon_23    0.00%    passed     63.26%
+  24  taxon_24    0.00%    passed     96.08%
+  25  taxon_25    0.00%    passed     87.16%
+  26  taxon_26    0.00%    passed     91.21%
+  27  taxon_27    0.00%    passed     76.46%
+  28  taxon_28    0.00%    passed     31.63%
+  29  taxon_29    0.00%    failed      4.30%
+  30  taxon_30    0.00%    passed     96.37%
+****  TOTAL       0.00%  1 sequences failed composition chi2 test (p-value<5%; df=5)
+Checking for duplicate sequences: done in 0.000164986 secs using 94.55% CPU
+WARNING: 24 states (see below) not observed in alignment
+WARNING: State(s) 2, 3, 4, 5, 6, 7, 8, 9, B, D, E, F, H, I, J, K, L, M, N, O, P, Q, R, S not present in alignment and may cause numerical problems
+Creating fast initial parsimony tree by random order stepwise addition...
+0.073 seconds, parsimony score: 14919 (based on 1001 sites)
+ERROR: File not found JC
