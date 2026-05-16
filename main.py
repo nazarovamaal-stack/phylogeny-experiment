@@ -14,6 +14,7 @@ def save_result(rep_dir, m, n_sel, rep, rf, wrf):
         f.write(f"WRF={wrf:.6f}\n")
 
 def run_experiment(mutation_rate, work_dir):
+    """Запускает полный цикл эксперимента для заданной скорости мутаций: по всем m, n_sites, репликам."""
     ensure_dir(work_dir)
     n_comb = len(M_VALUES) * len(NUM_SELECTED_SITES) * N_REPLICATES
     print(f"\nMUTATION RATE = {mutation_rate}")
@@ -25,7 +26,6 @@ def run_experiment(mutation_rate, work_dir):
                 rep_dir = os.path.join(work_dir, f"m{m}_sel{n_sel}_rep{rep}")
                 result_file = os.path.join(rep_dir, "result.txt")
                 if os.path.exists(result_file):
-                    print(f"Skipping already completed: m={m}, sites={n_sel}, rep={rep}")
                     continue
                 ensure_dir(rep_dir)
                 seed = 42 + rep * 100 + n_sel * 1000 + int(m * 100)
@@ -37,13 +37,10 @@ def run_experiment(mutation_rate, work_dir):
                     dummy_fasta = os.path.join(rep_dir, "dummy.fasta")
                     true_tree_path = run_vgsim_wrapper(N_TAXA, effective_sites, m, dummy_fasta, seed, mutation_rate)
                 except Exception as e:
-                    print(f"run_vgsim_wrapper error: {e}")
                     sys.stdout.flush()
                 if true_tree_path is None:
-                    print("Skipping replicate: no tree generated")
                     sys.stdout.flush()
                     continue
-
                 try:
                     neutral_fasta = os.path.join(rep_dir, "neutral.fasta")
                     _, scaled_tree_path = run_alisim(true_tree_path, neutral_fasta, seed, mutation_rate, seq_len=NEUTRAL_LENGTH)
@@ -55,7 +52,6 @@ def run_experiment(mutation_rate, work_dir):
                     print(f"RF={rf:.6f}  WRF={wrf:.6f}")
                     sys.stdout.flush()
                 except Exception as e:
-                    print(f"Replication error: {e}")
                     sys.stdout.flush()
                     continue
 

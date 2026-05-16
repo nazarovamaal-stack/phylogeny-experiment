@@ -1,6 +1,7 @@
 import os
 
 def parse_fasta(path):
+    """Парсит FASTA файл в словарь."""
     seqs = {}
     if not os.path.exists(path) or os.path.getsize(path) == 0:
         return {}

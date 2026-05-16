@@ -10,6 +10,7 @@ from config import (
 )
 
 def run_vgsim_wrapper(n_taxa, n_sites, m, out_fasta, seed, mutation_rate):
+    """Генерирует истинное филогенетическое дерево с помощью VGsim с возможностью отбора."""
     actual_sites = max(1, n_sites)
     max_attempts = 5
     for attempt in range(max_attempts):
@@ -35,11 +36,9 @@ def run_vgsim_wrapper(n_taxa, n_sites, m, out_fasta, seed, mutation_rate):
                 if os.path.exists(alt_path):
                     tree_path = alt_path
                 else:
-                    print(f"Tree file not found, attempt {attempt + 1} failed")
                     continue
             tree = dendropy.Tree.get_from_path(tree_path, schema="newick", rooting="force-unrooted")
         except Exception as e:
-            print(f"Simulation/genealogy error: {e}, attempt {attempt+1} failed")
             sys.stdout.flush()
             continue
         leaves = list(tree.leaf_node_iter())
@@ -51,13 +50,12 @@ def run_vgsim_wrapper(n_taxa, n_sites, m, out_fasta, seed, mutation_rate):
             tree.write(path=tree_path, schema="newick", suppress_rooting=True, unquoted_underscores=True)
             return tree_path
         else:
-            print(f"  Attempt {attempt + 1}: got {len(leaves)} samples (< {n_taxa}), retrying...")
             sys.stdout.flush()
-    print(f"Failed to get {n_taxa} samples after {max_attempts} attempts for seed {seed}")
     sys.stdout.flush()
     return None
 
 def run_alisim(tree_path, out_fasta, seed, mutation_rate, seq_len=None):
+    """Генерирует нейтральные последовательности на заданном дереве по модели JC69."""
     if seq_len is None:
         seq_len = NEUTRAL_LENGTH
     tree = dendropy.Tree.get_from_path(tree_path, schema="newick", rooting="force-unrooted")

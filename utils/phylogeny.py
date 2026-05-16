@@ -6,6 +6,7 @@ from .system import run_cmd
 from config import IQTREE_CMD
 
 def run_iqtree(aln_path, out_prefix, seed):
+    """Запускает IQ-TREE для построения максимально правдоподобного дерева по выравниванию."""
     run_cmd(
         f"{IQTREE_CMD} -s {aln_path} -m JC -nt AUTO "
         f"-pre {out_prefix} -seed {seed} -redo"
@@ -13,6 +14,7 @@ def run_iqtree(aln_path, out_prefix, seed):
     return f"{out_prefix}.treefile"
 
 def rf_distance(tree1_path, tree2_path, normalized=True):
+    """Вычисляет расстояние Робинсона-Фолдса между двумя деревьями."""
     taxon_namespace = dendropy.TaxonNamespace()
     t1 = dendropy.Tree.get_from_path(
         tree1_path, schema="newick", rooting="force-unrooted",
@@ -33,6 +35,7 @@ def rf_distance(tree1_path, tree2_path, normalized=True):
     return rf_raw / max_rf
 
 def weighted_rf_distance(tree1_path, tree2_path):
+    """Вычисляет взвешенное расстояние Робинсона-Фолдса с учётом длин ветвей."""
     t1 = dendropy.Tree.get_from_path(tree1_path, schema="newick", rooting="force-unrooted")
     t2 = dendropy.Tree.get_from_path(tree2_path, schema="newick", rooting="force-unrooted")
     t1.migrate_taxon_namespace(t2.taxon_namespace)

@@ -5,6 +5,7 @@ import seaborn as sns
 from config import BASE_WORK_DIR, MUTATION_RATES
 
 def collect_all_results(base_dir):
+    """Собирает все файлы result.txt из папок exp_stable_*/m*_sel*_rep*/ и возвращает DataFrame с колонками mutation_rate, m, n_sites, replicate, RF, WRF."""
     data = []
     for mut_rate in MUTATION_RATES:
         work_dir = f"{base_dir}_{mut_rate}"
@@ -50,6 +51,7 @@ def collect_all_results(base_dir):
     return pd.DataFrame(data)
 
 def create_tables_and_plots(df, metric="RF"):
+    """По данным df строит тепловые карты и линейные графики зависимости метрики от m, сохраняет их в PNG."""
     if df.empty:
         return
     summary = df.groupby(['mutation_rate', 'm', 'n_selected_sites'])[metric].agg(['mean', 'std', 'min', 'max']).round(6)
