@@ -3,6 +3,7 @@ import sys
 import numpy as np
 import dendropy
 import VGsim
+import itertools
 from config import (
     TRANSMISSION_RATE, RECOVERY_RATE, SAMPLING_RATE,
     SUBSTITUTION_WEIGHTS, POPULATION_SIZE,
@@ -23,9 +24,15 @@ def run_vgsim_wrapper(n_taxa, n_sites, m, out_fasta, seed, mutation_rate):
             simulator.set_sampling_rate(SAMPLING_RATE)
             simulator.set_mutation_rate(mutation_rate, SUBSTITUTION_WEIGHTS)
             if n_sites > 0 and m > 0:
-                adv_haplotype = 'G' * n_sites
-                enhanced_rate = TRANSMISSION_RATE * (1.0 + m)
-                simulator.set_transmission_rate(enhanced_rate, haplotype=adv_haplotype)
+                nucleotides = ['A', 'T', 'C', 'G']
+                for haplotype in itertools.product(nucleotides, repeat=n_sites):
+                    haplotype_str = ''.join(haplotype)
+                    g_count = haplotype_str.count('G')
+                    if g_count == 0:
+                        rate = TRANSMISSION_RATE
+                    else:
+                        rate = TRANSMISSION_RATE * ((1.0 + m) ** g_count)
+                    simulator.set_transmission_rate(rate, haplotype=haplotype_str)
             simulator.set_population_size(POPULATION_SIZE, population=0)
             simulator.simulate(MAX_ITERATIONS, n_taxa, EPIDEMIC_TIME, 'tau')
             simulator.genealogy()
