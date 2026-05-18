@@ -1,0 +1,197 @@
+IQ-TREE 3.1.1 built Apr  8 2026
+
+Input file name: exp_stable_0.001/m0_sel2_rep6/neutral.fasta
+Type of analysis: tree reconstruction
+Random seed number: 3342
+
+REFERENCES
+----------
+
+To cite IQ-TREE 3 please use:
+
+Thomas K.F. Wong, Nhan Ly-Trong, Huaiyan Ren, Hector Banos, Andrew J. Roger,
+Edward Susko, Chris Bielow, Nicola De Maio, Nick Goldman, Matthew W. Hahn,
+Gavin Huttley, Robert Lanfear, Bui Quang Minh (2025)
+IQ-TREE 3: Phylogenomic Inference Software using Complex Evolutionary Models.
+Submitted.
+
+SEQUENCE ALIGNMENT
+------------------
+
+NOTE: Alignment sequence type is auto-detected. If in doubt, specify it via -st option.
+Input data: 50 sequences with 3000 nucleotide sites
+Number of constant sites: 27 (= 0.9% of all sites)
+Number of invariant (constant or ambiguous constant) sites: 27 (= 0.9% of all sites)
+Number of parsimony informative sites: 2726
+Number of distinct site patterns: 2965
+
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: JC
+
+Rate parameter R:
+
+  A-C: 1.0000
+  A-G: 1.0000
+  A-T: 1.0000
+  C-G: 1.0000
+  C-T: 1.0000
+  G-T: 1.0000
+
+State frequencies: (equal frequencies)
+
+Rate matrix Q:
+
+  A        -1    0.3333    0.3333    0.3333
+  C    0.3333        -1    0.3333    0.3333
+  G    0.3333    0.3333        -1    0.3333
+  T    0.3333    0.3333    0.3333        -1
+
+Model of rate heterogeneity: Uniform
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -67147.4002 (s.e. 415.9258)
+Unconstrained log-likelihood (without tree): -23947.0292
+Number of free parameters (#branches + #model parameters): 97
+Akaike information criterion (AIC) score: 134488.8004
+Corrected Akaike information criterion (AICc) score: 134495.3517
+Bayesian information criterion (BIC) score: 135071.4180
+
+Total tree length (sum of branch lengths): 4.6003
+Sum of internal branch lengths: 1.5127 (32.8821% of tree length)
+
+WARNING: 2 near-zero internal branches (<0.0003) should be treated with caution
+         Such branches are denoted by '**' in the figure below
+
+NOTE: Tree is UNROOTED although outgroup taxon 'taxon_1' is drawn at root
+
++-----------------taxon_1
+|
+|           +--------taxon_2
++-----------|
+|           +----taxon_3
+|
+|                 +------------taxon_4
+|        +--------|
+|        |        |  +-----------taxon_5
+|        |        +--|
+|        |           |  +------------taxon_6
+|        |           +--|
+|        |              +----taxon_7
+|     +--|
+|     |  |              +----------taxon_8
+|     |  |           +--|
+|     |  |           |  +---------taxon_9
+|     |  |      +----|
+|     |  |      |    |  +------------taxon_10
+|     |  |      |    +--|
+|     |  |      |       +--------taxon_11
+|     |  |  +---|
+|     |  |  |   |          +------taxon_12
+|     |  |  |   |  +-------|
+|     |  |  |   |  |       |  +---taxon_13
+|     |  |  |   |  |       +--|
+|     |  |  |   |  |          +--taxon_14
+|     |  |  |   +--|
+|     |  |  |      |  +--------------taxon_15
+|     |  |  |      +--|
+|     |  |  |         |  +--------taxon_16
+|     |  |  |         +--|
+|     |  |  |            |      +----taxon_17
+|     |  |  |            +------|
+|     |  |  |                   +--taxon_18
+|     |  +--|
+|     |     |           +-----taxon_19
+|     |     |  +--------|
+|     |     |  |        |    +-----taxon_20
+|     |     |  |        +----|
+|     |     |  |             +**taxon_21
+|     |     +--|
+|     |        +------taxon_22
++-----|
+      |                       +------------------taxon_23
+      |                 +-----|
+      |                 |     |       +-----------------taxon_24
+      |                 |     |    +--|
+      |                 |     |    |  +-------taxon_25
+      |                 |     +----|
+      |                 |          |      +------------taxon_26
+      |                 |          |  +---|
+      |                 |          |  |   +----------taxon_27
+      |                 |          +--|
+      |                 |             |        +---------taxon_28
+      |                 |             |  +-----|
+      |                 |             |  |     +----taxon_29
+      |                 |             +--|
+      |                 |                |     +------taxon_30
+      |                 |                |  +--|
+      |                 |                |  |  |  +--------taxon_31
+      |                 |                |  |  +**|
+      |                 |                |  |     +--taxon_32
+      |                 |                +--|
+      |                 |                   |  +--------------taxon_33
+      |                 |                   +**|
+      |                 |                      +--taxon_34
+      +-----------------|
+                        |             +-----------taxon_35
+                        |   +---------|
+                        |   |         |           +--taxon_36
+                        |   |         |   +-------|
+                        |   |         |   |       +--taxon_37
+                        |   |         +---|
+                        |   |             |  +-----------taxon_38
+                        |   |             +--|
+                        |   |                +----taxon_39
+                        +---|
+                            |  +---taxon_40
+                            +--|
+                               |  +------taxon_41
+                               +--|
+                                  |           +---------taxon_42
+                                  |        +--|
+                                  |        |  |   +----taxon_43
+                                  |        |  +---|
+                                  |        |      +--taxon_44
+                                  |  +-----|
+                                  |  |     |  +-----taxon_45
+                                  |  |     +--|
+                                  |  |        +----taxon_46
+                                  +--|
+                                     |          +--------taxon_47
+                                     |    +-----|
+                                     |    |     +-----taxon_48
+                                     +----|
+                                          |  +------------taxon_49
+                                          +--|
+                                             +------------taxon_50
+
+Tree in newick format:
+
+(taxon_1:0.1307230934,(taxon_2:0.0694913705,taxon_3:0.0367731776):0.0888738948,(((taxon_4:0.0963034291,(taxon_5:0.0915016022,(taxon_6:0.0989194352,taxon_7:0.0387896420):0.0156255532):0.0115617963):0.0655731405,((((taxon_8:0.0842644620,taxon_9:0.0731767453):0.0220827414,(taxon_10:0.0940521994,taxon_11:0.0644495651):0.0166256908):0.0387922753,((taxon_12:0.0563699743,(taxon_13:0.0299465875,taxon_14:0.0272978829):0.0022437679):0.0582945649,(taxon_15:0.1067402759,(taxon_16:0.0694399456,(taxon_17:0.0395783733,taxon_18:0.0254807720):0.0559001183):0.0173804676):0.0224236279):0.0124681665):0.0296105197,((taxon_19:0.0429559602,(taxon_20:0.0442821330,taxon_21:0.0000022985):0.0401402736):0.0689303687,taxon_22:0.0528242621):0.0161014855):0.0138950288):0.0116158784,((taxon_23:0.1412939553,((taxon_24:0.1340268457,taxon_25:0.0594425652):0.0209907256,((taxon_26:0.0924170231,taxon_27:0.0812683860):0.0333404700,((taxon_28:0.0715587890,taxon_29:0.0371898853):0.0481163567,((taxon_30:0.0565479937,(taxon_31:0.0701940262,taxon_32:0.0042047617):0.0002296681):0.0193123740,(taxon_33:0.1089360344,taxon_34:0.0144474812):0.0001095531):0.0175395399):0.0126653365):0.0069575039):0.0386134501):0.0448054025,((taxon_35:0.0874363398,((taxon_36:0.0189638244,taxon_37:0.0051004990):0.0634701838,(taxon_38:0.0866339650,taxon_39:0.0413975749):0.0220340084):0.0310202322):0.0729630006,(taxon_40:0.0315276632,(taxon_41:0.0511929257,(((taxon_42:0.0747821352,(taxon_43:0.0414548360,taxon_44:0.0125173552):0.0307869949):0.0214767321,(taxon_45:0.0429903536,taxon_46:0.0421695174):0.0125378302):0.0482731723,((taxon_47:0.0684702854,taxon_48:0.0495414216):0.0436068586,(taxon_49:0.0941004366,taxon_50:0.0944819657):0.0073108713):0.0409164640):0.0270595769):0.0013954792):0.0254343276):0.0331444161):0.1315353031):0.0489037987);
+
+ALISIM COMMAND
+--------------
+To simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis, you can use the following command:
+
+--alisim simulated_MSA -t exp_stable_0.001/m0_sel2_rep6/iqtree_out.treefile -m "JC" --length 3000
+
+To mimic the alignment used to produce this analysis, i.e. simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis *and* copying the same gap positions as the original alignment, you can use the following command:
+
+iqtree -s exp_stable_0.001/m0_sel2_rep6/neutral.fasta --alisim mimicked_MSA
+
+To simulate any number of alignments in either of the two commandlines above, use the --num-alignments options, for example mimic 100 alignments you would use the command line:
+
+iqtree -s exp_stable_0.001/m0_sel2_rep6/neutral.fasta --alisim mimicked_MSA --num-alignments 100
+
+For more information on using AliSim, please visit: www.iqtree.org/doc/AliSim
+
+TIME STAMP
+----------
+
+Date and time: Mon May 18 23:22:15 2026
+Total CPU time used: 40.0433 seconds (0h:0m:40s)
+Total wall-clock time used: 32.388 seconds (0h:0m:32s)
+

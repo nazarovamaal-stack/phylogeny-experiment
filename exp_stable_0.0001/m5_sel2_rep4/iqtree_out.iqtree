@@ -1,0 +1,155 @@
+IQ-TREE 3.1.1 built Apr  8 2026
+
+Input file name: exp_stable_0.0001/m5_sel2_rep4/neutral.fasta
+Type of analysis: tree reconstruction
+Random seed number: 2942
+
+REFERENCES
+----------
+
+To cite IQ-TREE 3 please use:
+
+Thomas K.F. Wong, Nhan Ly-Trong, Huaiyan Ren, Hector Banos, Andrew J. Roger,
+Edward Susko, Chris Bielow, Nicola De Maio, Nick Goldman, Matthew W. Hahn,
+Gavin Huttley, Robert Lanfear, Bui Quang Minh (2025)
+IQ-TREE 3: Phylogenomic Inference Software using Complex Evolutionary Models.
+Submitted.
+
+SEQUENCE ALIGNMENT
+------------------
+
+NOTE: Alignment sequence type is auto-detected. If in doubt, specify it via -st option.
+Input data: 50 sequences with 3000 nucleotide sites
+Number of constant sites: 2969 (= 98.9667% of all sites)
+Number of invariant (constant or ambiguous constant) sites: 2969 (= 98.9667% of all sites)
+Number of parsimony informative sites: 4
+Number of distinct site patterns: 34
+
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: JC
+
+Rate parameter R:
+
+  A-C: 1.0000
+  A-G: 1.0000
+  A-T: 1.0000
+  C-G: 1.0000
+  C-T: 1.0000
+  G-T: 1.0000
+
+State frequencies: (equal frequencies)
+
+Rate matrix Q:
+
+  A        -1    0.3333    0.3333    0.3333
+  C    0.3333        -1    0.3333    0.3333
+  G    0.3333    0.3333        -1    0.3333
+  T    0.3333    0.3333    0.3333        -1
+
+Model of rate heterogeneity: Uniform
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -4459.7480 (s.e. 48.2849)
+Unconstrained log-likelihood (without tree): -4392.2967
+Number of free parameters (#branches + #model parameters): 55
+Akaike information criterion (AIC) score: 9029.4959
+Corrected Akaike information criterion (AICc) score: 9031.5883
+Bayesian information criterion (BIC) score: 9359.8461
+
+Total tree length (sum of branch lengths): 0.0104
+Sum of internal branch lengths: 0.0007 (6.6236% of tree length)
+
+WARNING: 22 near-zero internal branches (<0.0003) should be treated with caution
+         Such branches are denoted by '**' in the figure below
+
+NOTE: Tree is UNROOTED although outgroup taxon 'taxon_1' is drawn at root
+
++-------------taxon_1
+|
+|                       +**taxon_2
+|                    +**|
+|                    |  +**taxon_3
+|                 +**|
+|                 |  |                +**taxon_14
+|                 |  |  +-------------|
+|                 |  |  |             +**taxon_15
+|                 |  +**|
+|                 |     |                   +-------------taxon_21
+|                 |     |                +**|
+|                 |     |                |  +----------------------------taxon_22
+|                 |     |             +**|
+|                 |     |             |  +**taxon_24
+|                 |     +-------------|
+|                 |                   +**taxon_23
+|              +**|
+|              |  |  +-------------taxon_40
+|              |  +**|
+|              |     +----------------------------taxon_49
+|           +**|
+|           |  |  +----------------------------taxon_20
+|           |  +**|
+|           |     |                   +**taxon_26
+|           |     |                +**|
+|           |     |                |  +**taxon_29
+|           |     |             +**|
+|           |     |             |  |  +-------------taxon_28
+|           |     |             |  +**|
+|           |     |             |     +-------------taxon_30
+|           |     +-------------|
+|           |                   +----------------------------taxon_27
+|        +**|
+|        |  |  +-------------taxon_32
+|        |  +**|
+|        |     +-------------taxon_42
+|     +**|
+|     |  |  +-------------taxon_34
+|     |  +**|
+|     |     +----------------------------taxon_48
+|  +**|
+|  |  |  +-------------taxon_13
+|  |  +**|
+|  |     +-------------taxon_45
++**|
+|  |                   +**taxon_5
+|  |     +-------------|
+|  |     |             +**taxon_6
+|  |  +**|
+|  |  |  +----------------------------------------------------------taxon_17
+|  +**|
+|     |  +-------------taxon_33
+|     +**|
+|        +-------------taxon_43
+|
++-------------taxon_4
+
+Tree in newick format:
+
+(taxon_1:0.0003334074,((((((((taxon_2:0.0000010000,taxon_3:0.0000010000):0.0000010000,((taxon_14:0.0000010000,taxon_15:0.0000010000):0.0003334074,(((taxon_21:0.0003334074,taxon_22:0.0006669631):0.0000010000,taxon_24:0.0000010000):0.0000010000,taxon_23:0.0000010000):0.0003334074):0.0000010000):0.0000010000,(taxon_40:0.0003334074,taxon_49:0.0006669631):0.0000010000):0.0000010000,(taxon_20:0.0006669631,(((taxon_26:0.0000010000,taxon_29:0.0000010000):0.0000010000,(taxon_28:0.0003334074,taxon_30:0.0003334074):0.0000010000):0.0000010000,taxon_27:0.0006669631):0.0003334074):0.0000010000):0.0000010000,(taxon_32:0.0003334074,taxon_42:0.0003334074):0.0000010000):0.0000010000,(taxon_34:0.0003334074,taxon_48:0.0006669631):0.0000010000):0.0000010000,(taxon_13:0.0003334074,taxon_45:0.0003334074):0.0000010000):0.0000010000,(((taxon_5:0.0000010000,taxon_6:0.0000010000):0.0003334074,taxon_17:0.0013345199):0.0000010000,(taxon_33:0.0003334074,taxon_43:0.0003334074):0.0000010000):0.0000010000):0.0000010000,taxon_4:0.0003334074);
+
+ALISIM COMMAND
+--------------
+To simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis, you can use the following command:
+
+--alisim simulated_MSA -t exp_stable_0.0001/m5_sel2_rep4/iqtree_out.treefile -m "JC" --length 3000
+
+To mimic the alignment used to produce this analysis, i.e. simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis *and* copying the same gap positions as the original alignment, you can use the following command:
+
+iqtree -s exp_stable_0.0001/m5_sel2_rep4/neutral.fasta --alisim mimicked_MSA
+
+To simulate any number of alignments in either of the two commandlines above, use the --num-alignments options, for example mimic 100 alignments you would use the command line:
+
+iqtree -s exp_stable_0.0001/m5_sel2_rep4/neutral.fasta --alisim mimicked_MSA --num-alignments 100
+
+For more information on using AliSim, please visit: www.iqtree.org/doc/AliSim
+
+TIME STAMP
+----------
+
+Date and time: Mon May 18 17:09:13 2026
+Total CPU time used: 21.2598 seconds (0h:0m:21s)
+Total wall-clock time used: 31.3644 seconds (0h:0m:31s)
+
