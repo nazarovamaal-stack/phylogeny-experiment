@@ -22,7 +22,7 @@ def run_experiment(mutation_rate, work_dir):
     sys.stdout.flush()
     for m in tqdm(M_VALUES):
         for n_sel in NUM_SELECTED_SITES:
-            for rep in range(13, N_REPLICATES + 12):
+            for rep in range(1, N_REPLICATES + 1):
                 rep_dir = os.path.join(work_dir, f"m{m}_sel{n_sel}_rep{rep - 7}")
                 result_file = os.path.join(rep_dir, "result.txt")
                 if os.path.exists(result_file):
