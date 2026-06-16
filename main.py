@@ -42,12 +42,12 @@ def run_experiment(mutation_rate, work_dir):
                     sys.stdout.flush()
                     continue
                 try:
-                    neutral_fasta = os.path.join(rep_dir, "neutral.fasta")
-                    _, scaled_tree_path = run_alisim(true_tree_path, neutral_fasta, seed, mutation_rate, seq_len=NEUTRAL_LENGTH)
+                    alisim_out_base = os.path.join(rep_dir, "neutral")
+                    neutral_fasta = run_alisim(true_tree_path, NEUTRAL_LENGTH, alisim_out_base)
                     iqtree_prefix = os.path.join(rep_dir, "iqtree_out")
                     inferred_tree = run_iqtree(neutral_fasta, iqtree_prefix, seed)
-                    rf = rf_distance(scaled_tree_path, inferred_tree)
-                    wrf = weighted_rf_distance(scaled_tree_path, inferred_tree)
+                    rf = rf_distance(true_tree_path, inferred_tree)
+                    wrf = weighted_rf_distance(true_tree_path, inferred_tree)
                     save_result(rep_dir, m, n_sel, rep, rf, wrf)
                     print(f"RF={rf:.6f}  WRF={wrf:.6f}")
                     sys.stdout.flush()
