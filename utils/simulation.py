@@ -65,8 +65,7 @@ def run_vgsim_wrapper(n_taxa, n_sites, m, out_fasta, seed, mutation_rate):
 
 def run_alisim(scaled_tree_path, seq_len, out_base):
     """
-    Запускает симулятор AliSim через командную строку IQ-TREE.
-    Генерирует нейтральные последовательности по модели JC69.
+    Запускает симулятор AliSim через командную строку IQ-TREE. Генерирует нейтральные последовательности по модели JC69.
     """
     out_fasta = out_base + ".fa"
     cmd = [
