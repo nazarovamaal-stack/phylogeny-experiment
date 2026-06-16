@@ -3,6 +3,7 @@ import sys
 import numpy as np
 import dendropy
 import VGsim
+import subprocess
 import itertools
 from config import (
     TRANSMISSION_RATE, RECOVERY_RATE, SAMPLING_RATE,
@@ -61,47 +62,29 @@ def run_vgsim_wrapper(n_taxa, n_sites, m, out_fasta, seed, mutation_rate):
     sys.stdout.flush()
     return None
 
-def run_alisim(tree_path, out_fasta, seed, mutation_rate, seq_len=None):
-    """Генерирует нейтральные последовательности на заданном дереве по модели JC69."""
-    if seq_len is None:
-        seq_len = NEUTRAL_LENGTH
-    tree = dendropy.Tree.get_from_path(tree_path, schema="newick", rooting="force-unrooted")
-    for node in tree.postorder_node_iter():
-        if node.edge_length is not None:
-            node.edge_length = float(node.edge_length)
-    for node in tree.postorder_node_iter():
-        if node.edge_length is not None:
-            node.edge_length *= mutation_rate
-    scaled_tree_path = tree_path.replace(".nwk", "_subst.nwk")
-    tree.write(path=scaled_tree_path, schema="newick", suppress_rooting=True, unquoted_underscores=True)
-    rng = np.random.default_rng(seed)
-    node_to_seq = {}
 
-    def simulate_node(node, parent_seq=None):
-        if parent_seq is None:
-            seq = rng.choice(['A','C','G','T'], size=seq_len)
+def run_alisim(scaled_tree_path, seq_len, out_base):
+    """
+    Запускает симулятор AliSim через командную строку IQ-TREE.
+    Генерирует нейтральные последовательности по модели JC69.
+    """
+    out_fasta = out_base + ".fa"
+    cmd = [
+        "iqtree2",
+        "--alisim", out_base,
+        "-m", "JC",
+        "-t", scaled_tree_path,
+        "--num-sites", str(seq_len),
+        "-af", "fasta",
+        "--overwrite"
+    ]
+    try:
+        subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        if os.path.exists(out_fasta):
+            return out_fasta
         else:
-            t = node.edge_length if node.edge_length is not None else 0.0
-            if t > 0:
-                p_same = 0.25 + 0.75 * np.exp(-4.0/3.0 * t)
-                new_seq = parent_seq.copy()
-                mask = rng.random(seq_len) >= p_same
-                if mask.any():
-                    bases = np.array(['A','C','G','T'])
-                    curr = parent_seq[mask]
-                    alt = np.array([bases[bases != c] for c in curr], dtype=object)
-                    new_seq[mask] = [rng.choice(a) for a in alt]
-                seq = new_seq
-            else:
-                seq = parent_seq.copy()
-        node_to_seq[node] = seq
-        for child in node.child_node_iter():
-            simulate_node(child, seq)
+            raise FileNotFoundError(f"AliSim не создал файл: {out_fasta}")
 
-    simulate_node(tree.seed_node)
-    with open(out_fasta, 'w') as f:
-        for leaf in tree.leaf_node_iter():
-            name = leaf.taxon.label.replace(' ', '_')
-            seq_str = ''.join(node_to_seq[leaf])
-            f.write(f">{name}\n{seq_str}\n")
-    return out_fasta, scaled_tree_path
+    except subprocess.CalledProcessError as e:
+        print(f"Ошибка при запуске AliSim: {e}")
+        return None
